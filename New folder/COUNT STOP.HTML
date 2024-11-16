@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        input {
+            width: 300px;
+            padding: 20px;
+            font-size: 30px;
+            border-radius: 10px auto;
+        }
+
+        #startButton {
+            margin-top: 20px;
+            margin: 20px;
+            font-size: 20px;
+            padding: 20px;
+        }
+
+        #stopButton {
+            margin-top: 20px;
+            margin: 20px;
+            font-size: 20px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Timer</h1>
+    <input type="text" id="timerDisplay" value="0" readonly>
+    <br>
+    <button id="startButton">Start Count</button>
+    <button id="stopButton">Stop Count</button>
+    <script>
+        let timerInterval;
+        let timerValue = 0;
+        const timerDisplay = document.getElementById('timerDisplay');
+        const startButton = document.getElementById('startButton');
+        const stopButton = document.getElementById('stopButton');
+        function updateTimerDisplay() {
+            timerDisplay.value = timerValue;
+        }
+        function startTimer() {
+            timerInterval = setInterval(function () {
+                timerValue++;
+                updateTimerDisplay();
+            }, 1000); // Update the timer every 1000 milliseconds (1 second)
+            startButton.disabled = true;
+            stopButton.disabled = false;
+        }
+        function stopTimer() {
+            clearInterval(timerInterval);
+            startButton.disabled = false;
+            stopButton.disabled = true;
+        }
+        startButton.addEventListener('click', startTimer);
+        stopButton.addEventListener('click', stopTimer);
+        // Initial state
+        stopButton.disabled = true;
+    </script>
+</body>
+
+</html>

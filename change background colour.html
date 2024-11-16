@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>|| Change The Background ||</title>
+
+    <!-- here i am using css  -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        display: flex;
+        height: 100vh;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .container > h2 {
+        text-decoration: underline;
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+      .box > button {
+        padding: 10px;
+        font-size: 15px;
+        width: 80px;
+        font-weight: bold;
+      }
+      #btnRed {
+        color: red;
+      }
+      #btnGreen {
+        color: green;
+      }
+      #btnYellow {
+        color: yellow;
+      }
+      #btnBlue {
+        color: blue;
+      }
+      .box > button :hover {
+        background-color: rgb(22, 21, 21);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Change The Background</h2>
+      <div class="box">
+        <button id="btnRed">Red</button>
+        <button id="btnGreen">Green</button>
+        <button id="btnYellow">Yellow</button>
+        <button id="btnBlue">Blue</button>
+      </div>
+    </div>
+    <!-- here i am using javascipt  -->
+    <script>
+      let container = document.querySelector(".container");
+      let btnRed = document.getElementById("btnRed");
+      let btnGreen = document.getElementById("btnGreen");
+      let btnYellow = document.getElementById("btnYellow");
+      let btnBlue = document.getElementById("btnBlue");
+
+      btnRed.addEventListener("click", function () {
+        container.style.backgroundColor = "red";
+      });
+      btnGreen.addEventListener("click", function () {
+        container.style.backgroundColor = "green";
+      });
+      btnYellow.addEventListener("click", function () {
+        container.style.backgroundColor = "yellow";
+      });
+      btnBlue.addEventListener("click", function () {
+        container.style.backgroundColor = "blue";
+      });
+    </script>
+ </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <script>
+        function validateForm() {
+            var username = document.getElementById('username').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            if (username === '' || email === '' || password === '') {
+                alert('All fields must be filled out');
+                return false;
+            }
+
+            // You can add more specific validations for each field, e.g., checking email format.
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Registration Form</h2>
+
+    <form id="registrationForm" onsubmit="return validateForm()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+
+        <input type="submit" value="Register">
+    </form>
+
+</body>
+</html>
